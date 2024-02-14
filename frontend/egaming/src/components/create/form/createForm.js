@@ -3,8 +3,10 @@ import Table from '../table/table'
 import Stage from '../stage/stage'
 import style from './style.css';
 import eventModel from "../../../models/eventModel";
+import { useNavigate } from "react-router-dom";
 
 const CreateForm = () => {
+    const navigate = useNavigate();
     const rowNames = ["A", "B", "C", "D", "E", "F", "G", "H"];
     const [col, setCol] = useState(2);
     const [row, setRows] = useState(2);
@@ -44,6 +46,8 @@ const CreateForm = () => {
             // data.A["3"] = { "booked": "true", "name": "Kalle" };
             // event[eventName].push(data);
             eventModel.addEvent(data);
+            navigate('/admin');
+
         }
         else {
             alert("Fyll i alla fält");

@@ -1,6 +1,5 @@
 const { database, event } = require('../database/database.js');
 const ObjectId = require('mongodb').ObjectId;
-const db = database.getDb();
 
 const eventModel = {
     getEvents: async function getEvents(req, res) {
@@ -40,6 +39,24 @@ const eventModel = {
             console.error('Error deleting event:', error);
             return res.status(500).json({ error: 'Internal Server Error' });
         }
+    },
+    activateEvent: async function activateEvent(req, res) {
+        try {
+            // Check if there is an active event
+            const filter1 = { active: true };
+            const activeEvent = await event.findOne(filter1);
+            if (activeEvent) {
+                await event.updateOne({ _id: activeEvent._id }, { $set: { active: false } });
+            }
+            const filter2 = { eventName: req.body.eventName };
+            const result = await event.findOneAndUpdate(filter2, { $set: { active: true } }, { new: true });
+
+            return res.json({ message: 'Event activated', modifiedCount: result ? 1 : 0 });
+        } catch (error) {
+            console.error('Error activating event:', error);
+            return res.status(500).json({ error: 'Internal Server Error' });
+        }
+
     }
 };
 

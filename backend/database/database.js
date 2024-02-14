@@ -19,6 +19,19 @@ const database = {
     }
 };
 
+const adminSchema = new mongoose.Schema({
+    "username": {
+        type: String,
+        required: true
+    },
+    "password": {
+        type: String,
+        required: true
+    }
+});
+
+const admin = mongoose.model("admin", adminSchema);
+
 // Define a schema for dynamic data
 const DynamicSchema = new mongoose.Schema({}, { strict: false });
 
@@ -32,7 +45,8 @@ const eventSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
-    "seats": DynamicSchema
+    "seats": DynamicSchema,
+    "active": { type: Boolean, default: false }
 });
 
 // Define a model using the schema
@@ -104,4 +118,4 @@ memberSchema.pre('save', async function (next) {
 });
 
 const member = mongoose.model("member", memberSchema);
-module.exports = { database, member, event };
+module.exports = { database, member, event, admin };

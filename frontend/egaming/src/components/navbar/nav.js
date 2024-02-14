@@ -9,13 +9,21 @@ console.log(path);
 const StartPage = () => {
     return (
         <div className='navbar'>
-            <a href="/">START</a>
-            <a
-                className="member-button"
-                href="https://ebas.sverok.se/blimedlem/etowngaming"
-            >BLI MEDLEM</a>
-            <a href="/event">EVENT</a>
-            <a href="/create-event">BOOK A SEAT</a>
+            <div className='login'>
+
+            </div>
+            <div className='nav-center'>
+                <a href="/">START</a>
+                <a
+                    className="member-button"
+                    href="https://ebas.sverok.se/blimedlem/etowngaming"
+                >BLI MEDLEM</a>
+                <a href="/event">EVENT</a>
+                {/* <a href="/create-event">BOOK A SEAT</a> */}
+            </div>
+            <div>
+                <a className="login" href="/login"></a>
+            </div>
         </div>
     );
 };

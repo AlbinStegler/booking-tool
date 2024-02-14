@@ -9,7 +9,7 @@ const Hero = () => {
                 <h1>Eskilstunas största e-sportförening</h1>
             </div>
             <video className="background-video" autoPlay loop muted>
-                <source src="images/first_export_long.mp4" type="video/mp4" alt="backgroundvideo" />
+                <source src="videos/first_export_long.mp4" type="video/mp4" alt="backgroundvideo" />
             </video>
         </div >
     );

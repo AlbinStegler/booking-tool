@@ -1,0 +1,29 @@
+.event {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(75, 75, 75, 0.411);
+    overflow: scroll;
+    margin: 1em;
+}
+
+.events-container {
+    width: 45%;
+}
+
+@media screen and (max-width: 768px) {
+    .events-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .event {
+        width: 77%;
+    }
+}

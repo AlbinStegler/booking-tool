@@ -4,10 +4,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import { AuthProvider } from './context/AuthContext';
 
 import './index.css';
-import Start from './views/start/start';
-import Event from './views/event/event';
 import CreateEvent from './views/create-event/createEvent';
+import Event from './views/event/event';
+import Login from './views/login/login';
+import Start from './views/start/start';
+
 import reportWebVitals from './reportWebVitals';
+import AdminStart from './views/admin-start/adminStart';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,6 +24,8 @@ root.render(
           <Route path="/" element={<Start />} />
           <Route path="/event" element={<Event />} />
           <Route path="/create-event" element={<CreateEvent />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<AdminStart />} />
         </Routes>
       </main>
     </Router>
