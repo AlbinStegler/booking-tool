@@ -1,0 +1,16 @@
+.seat {
+    width: 65%;
+    height: 30%;
+    background-color: rgb(47, 45, 189);
+}
+
+.seat p {
+    display: flex;
+    justify-content: center;
+    color: black;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}

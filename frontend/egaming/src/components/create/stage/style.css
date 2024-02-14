@@ -1,0 +1,10 @@
+.stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+    height: 150px;
+    background-color: rgb(136, 52, 52);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 72.32px), calc(100% - 23px) calc(100% - 23px), calc(100% - 72.32px) 100%, 72.32px 100%, 23px calc(100% - 23px), 0 calc(100% - 72.32px));
+}
