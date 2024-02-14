@@ -26,4 +26,8 @@ I will for this project be using a MongoDB database. This is beacause I'm not su
 ### Front and Backend
 Once i got started i created a basic groundwork for the frontend and backend. I created backend routes for the api to create events and users. After that was done i proceded with creating a event editing page on the frontend. The page is responsive in the way that you can add rows of tables and the amount of columns as you wish. When the event is the layout you like you can create a event to add it to the database.
 
+### Admin view
+I decided to create a admin view. To access it you have to login. From this page you can create new events and se all of the users and events created and where they are going to sit. The page handles a check to check if the user actually is logged in and the database is responsible to check that the username and password is a match.
+
+
 ### Manage events and add users to seats
