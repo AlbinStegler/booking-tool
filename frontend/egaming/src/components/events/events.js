@@ -28,10 +28,18 @@ const Events = () => {
         updateEvents();
     }
 
+    async function deleteEvent(e, id) {
+        await eventModel.deleteEvent(id);
+        updateEvents();
+    }
+
     let Events = events.map((event, index) => (
         <div key={index} className="event">
             <h1>{event.eventName}</h1>
-            <p>{new Date(event.eventDate).toLocaleDateString('sv-SE')}</p>
+            <div className='two-col'>
+                <p>{new Date(event.eventDate).toLocaleDateString('sv-SE')}</p>
+                <button onClick={e => deleteEvent(e, event._id)}>Ta bort event</button>
+            </div>
             <div className='two-col'>
                 {event.active === true ? <p>AKTIVT</p> : <p>EJ AKTIVT</p>}
                 <button onClick={e => activateEvent(e, event.eventName)}>Aktivera</button>

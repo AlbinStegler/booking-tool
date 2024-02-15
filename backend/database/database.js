@@ -104,7 +104,7 @@ memberSchema.pre('save', async function (next) {
     try {
         // Check if the username already exists
         const existingEmail = await this.constructor.findOne({ 'user.email': this.member.email });
-        const existingUser = await this.constructor.findOne({ 'user.username': this.member.username });
+        const existingUser = await this.constructor.findOne({ 'user.username': this.member.member_nick });
         if (existingUser) {
             throw new Error("Username is already taken");
         }

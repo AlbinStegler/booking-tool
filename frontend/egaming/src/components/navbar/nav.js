@@ -18,8 +18,7 @@ const StartPage = () => {
                     className="member-button"
                     href="https://ebas.sverok.se/blimedlem/etowngaming"
                 >BLI MEDLEM</a>
-                <a href="/event">EVENT</a>
-                {/* <a href="/create-event">BOOK A SEAT</a> */}
+                <a href="/book">LAN</a>
             </div>
             <div>
                 <a className="login" href="/login"></a>

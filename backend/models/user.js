@@ -41,7 +41,23 @@ const userModel = {
             console.error('Error deleting user:', error);
             return res.status(500).json({ error: 'Internal Server Error' });
         }
+    },
+    getUserFromSeat: async function getUserFromSeat(req, res) {
+        try {
+            const seat = { "row": req.body.row, "seat": req.body.seat };
+            console.log('Seat:', seat);
+            const user = await member.findOne({ "seat.row": seat.row, "seat.seat": seat.seat });
+            console.log('User:', user);
+            if (!user) {
+                return res.status(404).json({ error: 'User not found for the given seat.' });
+            }
+            return res.json(user);
+        } catch (error) {
+            console.error('Error fetching user:', error);
+            return res.status(500).json({ error: 'Internal Server Error' });
+        }
     }
+
 };
 
 module.exports = userModel;

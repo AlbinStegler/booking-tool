@@ -57,7 +57,44 @@ const eventModel = {
             return res.status(500).json({ error: 'Internal Server Error' });
         }
 
-    }
+    },
+    getActiveEvent: async function getActiveEvents(req, res) {
+        try {
+            const data = await event.findOne({ active: true });
+            return res.json(data);
+        } catch (error) {
+            console.error('Error fetching event:', error);
+            return res.status(500).json({ error: 'Internal Server Error' });
+        }
+    },
+    // Send the seat object in the request body to mark it as booked
+    bookSeat: async function bookSeat(req, res) {
+        try {
+            let row = req.body.seat.row;
+            console.log(row);
+            let nr = req.body.seat.nr;
+            console.log(nr);
+
+            const filter = { active: true };
+            const activeEvent = await event.findOne(filter);
+
+            if (!activeEvent) {
+                return res.status(400).json({ error: 'No active event' });
+            }
+
+            let updateQuery = {};
+            updateQuery[`seats.${row}.${nr}`] = "booked";
+
+            const result = await event.updateOne(filter, { $set: updateQuery });
+
+            console.log(result);
+
+            return res.status(200).json({ message: 'Seat booked successfully' });
+        } catch (error) {
+            console.error('Error booking seat:', error);
+            return res.status(500).json({ error: 'Internal Server Error' });
+        }
+    },
 };
 
 module.exports = eventModel;

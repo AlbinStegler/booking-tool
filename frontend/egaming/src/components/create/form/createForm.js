@@ -93,7 +93,10 @@ const CreateForm = () => {
                             <div className="row" key={j}>
                                 <h1>{rowNames[j]}</h1>
                                 {Array.from({ length: row }).map((_, i) => (
-                                    <Table seatInfo={{ "row": rowNames[j], "nr": i * 2 + 1 }} key={i} />
+                                    <Table seatInfo={{ "row": rowNames[j], "nr": i * 2 + 1 }}
+                                        isBooked={["free", "free"]}
+                                        onSeatClick={() => { }}
+                                        key={i} />
                                 ))}
                             </div>
                         ))}

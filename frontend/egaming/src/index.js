@@ -8,6 +8,7 @@ import CreateEvent from './views/create-event/createEvent';
 import Event from './views/event/event';
 import Login from './views/login/login';
 import Start from './views/start/start';
+import Book from './views/userSeat/userSeat';
 
 import reportWebVitals from './reportWebVitals';
 import AdminStart from './views/admin-start/adminStart';
@@ -26,6 +27,7 @@ root.render(
           <Route path="/create-event" element={<CreateEvent />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<AdminStart />} />
+          <Route path="/book" element={<Book />}></Route>
         </Routes>
       </main>
     </Router>
