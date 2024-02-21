@@ -2,7 +2,7 @@ import React from 'react';
 import AdminNav from '../../components/adminnav/adminnav';
 import Users from '../../components/users/users';
 import Events from '../../components/events/events';
-import style from './style.css';
+import './style.css';
 
 const AdminStart = () => {
 

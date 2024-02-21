@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import style from './style.css';
+import './style.css';
 import eventModel from '../../models/eventModel';
 
 const Events = () => {

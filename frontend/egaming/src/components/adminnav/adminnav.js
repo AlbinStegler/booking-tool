@@ -23,8 +23,8 @@ const StartPage = () => {
             <div className='navbar-admin'>
                 <a href="/admin">ADMIN</a>
                 <a href="/create-event">SKAPA EVENT</a>
+                <a className="logout" onClick={handleLogout} >LOGGA UT</a>
             </div>
-            <a className="logout" onClick={handleLogout} >LOGGA UT</a>
         </div>
     );
 

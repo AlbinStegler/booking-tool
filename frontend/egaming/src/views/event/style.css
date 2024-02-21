@@ -1,14 +1,29 @@
 .register-form {
-    margin: 5vh auto;
-    padding: 1em;
-    background-color: rgb(26, 26, 26);
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    width: 80%;
     height: fit-content;
+    color: rgb(146, 140, 202);
+    margin: 5vh auto;
+    padding: 1em;
+    background-color: rgb(26, 26, 26);
+    align-items: center;
+    width: 60vw;
     border-radius: 5px;
+}
+
+.left>div label {
+    color: rgb(209, 209, 209);
+}
+
+.right>div label {
+    color: rgb(209, 209, 209);
+}
+
+.form-container h1 {
+    font-family: 'Anton', sans-serif;
+    font-weight: 100;
+    font-size: 1.5em;
 }
 
 .form-container {
@@ -18,6 +33,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    background-color: rgb(20, 20, 20);
 }
 
 .info {
@@ -66,14 +82,63 @@
 }
 
 .register-form input {
+    background-color: rgb(117, 117, 117);
+    color: rgb(0, 0, 0);
     margin: 1vh 0;
     padding: 1vh 1vw;
     border-radius: 5px;
     border: none;
-    width: 80%;
 }
 
-.register-form .submit-label {
-    font-size: x-large;
-    color: rgb(88, 207, 77);
+input[type="submit"] {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5em;
+    height: 10vh;
+    background-color: rgb(148, 58, 58);
+    color: rgb(206, 206, 206);
+}
+
+@media screen and (max-width: 764px) {
+
+    .register-form {
+        display: flex;
+        flex-direction: column;
+        width: 85vw;
+        margin: 0;
+        gap: 2vh;
+    }
+
+    .left>div {
+        display: flex;
+        margin: auto;
+        width: 80vw;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%
+    }
+
+    .right>div {
+        display: flex;
+        width: 80vw;
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%
+    }
+
+    input[type="submit"] {
+        font-family: 'Anton', sans-serif;
+        font-size: 1.5em;
+        height: 10vh;
+        width: 80vw;
+        background-color: rgb(148, 58, 58);
+        color: rgb(206, 206, 206);
+    }
 }

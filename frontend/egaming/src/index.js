@@ -9,6 +9,7 @@ import Event from './views/event/event';
 import Login from './views/login/login';
 import Start from './views/start/start';
 import Book from './views/userSeat/userSeat';
+import Footer from './components/footer/footer';
 
 import reportWebVitals from './reportWebVitals';
 import AdminStart from './views/admin-start/adminStart';
@@ -30,6 +31,9 @@ root.render(
           <Route path="/book" element={<Book />}></Route>
         </Routes>
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </Router>
   </React.StrictMode>
 );

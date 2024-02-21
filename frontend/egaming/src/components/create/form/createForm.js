@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Table from '../table/table'
-import Stage from '../stage/stage'
-import style from './style.css';
+import Table from '../table/table';
+import Stage from '../stage/stage';
+import './style.css';
 import eventModel from "../../../models/eventModel";
 import { useNavigate } from "react-router-dom";
 

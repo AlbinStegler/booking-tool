@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import userModel from '../../../../models/userModel';
-import style from './style.css'
+import 'animate.css';
+import './style.css'
 
 const Seat = ({ seatInfo, onSeatClick, isBooked }) => {
     const nr = seatInfo.nr;
@@ -13,7 +14,8 @@ const Seat = ({ seatInfo, onSeatClick, isBooked }) => {
     const handleClosePopup = () => {
         setShowPopup(false);
     };
-    function clickHandler(e) {
+    async function clickHandler(e) {
+
         if (isBooked === "booked") {
             return;
         }
@@ -24,8 +26,16 @@ const Seat = ({ seatInfo, onSeatClick, isBooked }) => {
                 seat.classList.remove('selected');
             });
         }
-        console.log(isBooked);
         e.target.parentNode.classList.toggle('selected');
+        let button = document.getElementById('confirm');
+
+        if (button) {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+            button.classList.add("animate__animated", "animate__pulse");
+            setTimeout(() => {
+                button.classList.remove("animate__animated", "animate__pulse");
+            }, 1000);
+        }
     }
 
     async function handleDoubleClick(e) {

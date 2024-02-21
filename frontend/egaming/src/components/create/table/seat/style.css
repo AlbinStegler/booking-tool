@@ -1,13 +1,15 @@
 .seat {
     width: 65%;
     height: 30%;
+    border-radius: 4px;
     background-color: rgb(47, 45, 189);
 }
 
 .seat p {
+    font-family: anton;
     display: flex;
     justify-content: center;
-    color: black;
+    color: rgb(170, 170, 170);
     height: 100%;
     width: 100%;
     align-items: center;
@@ -16,12 +18,12 @@
 }
 
 .selected {
-    background-color: #cecbff;
+    background-color: #303030;
     color: black;
 }
 
 .seat:hover {
-    background-color: #838383;
+    background-color: #8a8a8a;
     color: black;
     cursor: pointer;
 }
@@ -45,4 +47,10 @@
     padding: 20px;
     border-radius: 10px;
 
+}
+
+@media screen and (max-width: 768px) {
+    .seat p {
+        font-size: 0.6em;
+    }
 }

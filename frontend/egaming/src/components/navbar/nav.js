@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import style from './style.css';
+import './style.css';
 
 let path = window.location.pathname;
 

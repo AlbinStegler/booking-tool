@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Nav from "../../components/navbar/nav";
-import style from "./style.css";
+import "./style.css";
 import { useLocation, useNavigate } from 'react-router-dom';
 import sverokModel from "../../models/sverokModel";
 import eventModel from "../../models/eventModel";
@@ -80,7 +80,7 @@ const Event = () => {
         <div>
             <Nav />
             <div className="form-container">
-                <h1>Bokning av plats {seat.row}{seat.nr}</h1>
+                <h1>BOKNING AV PLATS {seat.row}{seat.nr}</h1>
                 <form className="register-form" onSubmit={handleSubmit}>
                     <div className="left">
                         <div>
@@ -122,8 +122,7 @@ const Event = () => {
                             <input name="name" type="ssn" value={ssn} onChange={e => setSsn(e.target.value)} placeholder="ÅÅÅÅMMDDXXXX" required="required" />
                         </div>
                         <div>
-                            <label className="submit-label">Send</label>
-                            <input className="submit" type="submit" name="submit" />
+                            <input className="submit" type="submit" value="BOKA" />
                         </div>
                     </div>
                 </form>

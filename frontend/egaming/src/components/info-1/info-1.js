@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style.css';
+import './style.css';
 import { useNavigate } from 'react-router-dom';
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";

@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../../components/navbar/nav';
-import style from './style.css';
+import './style.css';
 import eventModel from '../../models/eventModel';
 import Table from '../../components/create/table/table';
 import Stage from '../../components/create/stage/stage';
+import EventArea from '../../components/create/eventArea/eventArea';
+import ColorExplanation from '../../components/create/colorExplanaition/colorExplanaition';
+
 import { useNavigate } from 'react-router-dom';
 
 const Book = () => {
@@ -37,6 +40,7 @@ const Book = () => {
     return (
         <>
             <Nav />
+            <ColorExplanation />
             <div className="booking-container">
                 <div className='seat-view'>
                     <Stage />
@@ -55,13 +59,12 @@ const Book = () => {
                             </div>
                         ))}
                     </div>
+                    <EventArea />
                 </div>
-                {selected.nr && <div className="confirm-container">
-                    <h1>Vald plats</h1>
-                    <h2>{selected.row}{selected.nr}</h2>
-                    <button onClick={confirmSeat}>Välj plats</button>
-                </div>}
             </div>
+            {selected.nr && <div className="confirm-container">
+                <button id="confirm" onClick={confirmSeat}><span>BOKA PLATS: {selected.row}{selected.nr}</span></button>
+            </div>}
         </>
     );
 };

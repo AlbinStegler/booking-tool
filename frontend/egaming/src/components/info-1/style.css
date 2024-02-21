@@ -44,6 +44,15 @@
             display: none;
         }
     }
+
+    .socials {
+        display: flex;
+        justify-content: center;
+        gap: 1vw;
+        align-items: center;
+        width: 100%;
+        margin-top: 1em;
+    }
 }
 
 .info-container {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Seat from './seat/seat';
-import style from './style.css';
+import './style.css';
 
 const Table = ({ seatInfo, onSeatClick, isBooked }) => {
     let data1 = { "row": seatInfo.row, "nr": seatInfo.nr };

@@ -17,10 +17,9 @@ a .member-button {
     font-size: 1.3em;
     display: flex;
     flex-direction: row;
-    gap: 8vw;
     justify-content: center;
     align-items: center;
-    height: 5vh;
+    height: 7vh;
     width: 100%;
     text-decoration: none;
 }
@@ -28,7 +27,7 @@ a .member-button {
 .nav-center {
     display: flex;
     flex-direction: row;
-    gap: 2vw;
+    gap: 10vw;
     justify-content: center;
     align-items: center;
     height: 100%;

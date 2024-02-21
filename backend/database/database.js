@@ -98,6 +98,10 @@ const memberSchema = new mongoose.Schema({
         "row": String,
         "seat": String
     },
+    "checked_in": {
+        type: Boolean,
+        default: false
+    }
 });
 
 memberSchema.pre('save', async function (next) {
