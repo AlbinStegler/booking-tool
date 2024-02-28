@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import style from './style.css';
+import './style.css';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ const StartPage = () => {
             <div className='navbar-admin'>
                 <a href="/admin">ADMIN</a>
                 <a href="/create-event">SKAPA EVENT</a>
-                <a className="logout" onClick={handleLogout} >LOGGA UT</a>
+                <a href="/" className="logout" onClick={handleLogout} >LOGGA UT</a>
             </div>
         </div>
     );

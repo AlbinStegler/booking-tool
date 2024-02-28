@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Nav from "../../components/navbar/nav";
 import "./style.css";
 import { useLocation, useNavigate } from 'react-router-dom';
-import sverokModel from "../../models/sverokModel";
+// import sverokModel from "../../models/sverokModel";
 import eventModel from "../../models/eventModel";
 import userModel from "../../models/userModel";
 import Lottie from 'lottie-react';
@@ -33,7 +33,7 @@ const Event = () => {
         if (!seat) {
             navigate('/book');
         }
-    }, [seat]);
+    }, [seat, navigate]);
 
     function ssnHandler(e) {
         let ssn = e.target.value;
