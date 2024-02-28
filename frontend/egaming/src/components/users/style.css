@@ -4,11 +4,11 @@
     font-size: 1.1em;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     padding: 20px;
     margin: 1em;
     border-radius: 5px;
-    box-shadow: 0px 0px 20px 1px rgb(48, 48, 48);
+    background-color: rgb(35, 33, 49);
     overflow: scroll;
 }
 
@@ -21,10 +21,7 @@
 }
 
 .user:hover {
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(136, 136, 148, 1);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(136, 136, 148, 1);
-    box-shadow: 0px 0px 10px 0px rgba(136, 136, 148, 1);
-    background-color: rgba(75, 75, 75, 0.411);
+    background-color: rgb(51, 38, 38);
 }
 
 .user h1 {
@@ -76,7 +73,19 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    gap: 1em;
     width: 100%;
+}
+
+.two-col button {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    width: 20vw;
+    height: 4vh;
+    margin-top: 1em;
+    cursor: pointer;
+    border: none;
 }
 
 .two-col p {

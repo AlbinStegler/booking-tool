@@ -1,6 +1,6 @@
 .booking-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100vw;
@@ -14,7 +14,9 @@
     justify-content: center;
     width: 90vw;
     margin-top: 1em;
-    overflow: scroll;
+    overflow-y: scroll;
+    border: 1px solid #303030;
+    margin-bottom: 1em;
 }
 
 .confirm-container {
@@ -26,14 +28,11 @@
 }
 
 .confirm-container button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: anton;
+
+    font-family: 'anton';
     font-size: 2em;
-    width: 40vw;
-    height: 10vh;
+    width: 20vw;
+    height: fit-content;
     background-color: #223d97;
     color: rgb(0, 0, 0);
     border: none;
@@ -51,6 +50,16 @@
         width: 100vw;
         height: 75vh;
         overflow: scroll;
+        border: none;
+    }
+
+    .booking-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        background-color: rgb(20, 20, 20);
     }
 
     .confirm-container button {
@@ -64,4 +73,11 @@
         cursor: pointer;
         transition: 0.3s;
     }
+}
+
+@media screen and (max-width: 1200px) {
+    .booking-container {
+        width: 100vw;
+    }
+
 }

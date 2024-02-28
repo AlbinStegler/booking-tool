@@ -2,7 +2,6 @@ main {
     background-color: rgb(15, 15, 15);
     color: white;
     min-height: fit-content;
-    max-height: 200vh;
     width: 100%;
 }
 

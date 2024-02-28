@@ -31,3 +31,7 @@ I decided to create a admin view. To access it you have to login. From this page
 
 
 ### Manage events and add users to seats
+Users can now book a seat. When booking checks that the seat is free before booking. If the seat is booked no user is created. From the adminpage when a user is removed the seat is unbooked from the event.
+
+### Responsive styling v.9
+Worked on the styling to make it resposive. Still some work to be done but its functional now.

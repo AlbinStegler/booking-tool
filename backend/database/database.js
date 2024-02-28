@@ -19,6 +19,7 @@ const database = {
     }
 };
 
+
 const adminSchema = new mongoose.Schema({
     "username": {
         type: String,
@@ -66,25 +67,12 @@ const memberSchema = new mongoose.Schema({
             type: String,
             required: true
         },
-        "co": [String],
         "email": {
             type: String,
             unique: true,
             required: true
         },
         "phone1": {
-            type: String,
-            required: true
-        },
-        "street": {
-            type: String,
-            required: true
-        },
-        "zip_code": {
-            type: String,
-            required: true
-        },
-        "city": {
             type: String,
             required: true
         },
@@ -101,6 +89,11 @@ const memberSchema = new mongoose.Schema({
     "checked_in": {
         type: Boolean,
         default: false
+    },
+    "event": {
+        type: String,
+        ref: 'event.eventName',
+        required: true
     }
 });
 
@@ -121,5 +114,11 @@ memberSchema.pre('save', async function (next) {
     }
 });
 
+const pastEvent = new mongoose.Schema({
+    "eventName": [memberSchema]
+});
+
+const past = mongoose.model("past", pastEvent);
+
 const member = mongoose.model("member", memberSchema);
-module.exports = { database, member, event, admin };
+module.exports = { database, member, event, admin, past };

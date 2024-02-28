@@ -10,6 +10,7 @@ import Login from './views/login/login';
 import Start from './views/start/start';
 import Book from './views/userSeat/userSeat';
 import Footer from './components/footer/footer';
+import Confirmation from './views/confirmation/confirmation';
 
 import reportWebVitals from './reportWebVitals';
 import AdminStart from './views/admin-start/adminStart';
@@ -29,6 +30,7 @@ root.render(
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<AdminStart />} />
           <Route path="/book" element={<Book />}></Route>
+          <Route path="/confirmation" element={<Confirmation />}></Route>
         </Routes>
       </main>
       <footer>

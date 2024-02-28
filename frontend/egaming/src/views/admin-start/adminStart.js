@@ -6,7 +6,6 @@ import './style.css';
 
 const AdminStart = () => {
 
-
     return (
         <>
             <AdminNav />

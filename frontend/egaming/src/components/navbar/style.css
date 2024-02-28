@@ -1,15 +1,14 @@
 a {
+    position: relative;
     text-decoration: none;
     color: rgb(255, 255, 255);
+    height: 50%;
 }
 
 a:visited {
     color: rgb(255, 255, 255);
 }
 
-a .member-button {
-    color: rgb(255, 255, 255);
-}
 
 .navbar {
     font-family: "Anton", sans-serif;
@@ -19,9 +18,13 @@ a .member-button {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 7vh;
     width: 100%;
     text-decoration: none;
+}
+
+.active {
+    border-bottom: white 5px solid;
+    border-radius: 3px;
 }
 
 .nav-center {
@@ -40,7 +43,8 @@ a .member-button {
 
 .login {
     display: flex;
-    justify-content: end;
+    color: rgba(1, 1, 1, 0);
+    justify-content: flex-end;
     width: 30px;
     height: 25px;
 }

@@ -30,11 +30,14 @@ const Seat = ({ seatInfo, onSeatClick, isBooked }) => {
         let button = document.getElementById('confirm');
 
         if (button) {
-            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
-            button.classList.add("animate__animated", "animate__pulse");
             setTimeout(() => {
-                button.classList.remove("animate__animated", "animate__pulse");
-            }, 1000);
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+                button.classList.add("animate__animated", "animate__pulse");
+                setTimeout(() => {
+                    button.classList.remove("animate__animated", "animate__pulse");
+                }
+                    , 1000);
+            }, 100);
         }
     }
 

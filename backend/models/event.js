@@ -71,9 +71,7 @@ const eventModel = {
     bookSeat: async function bookSeat(req, res) {
         try {
             let row = req.body.seat.row;
-            console.log(row);
             let nr = req.body.seat.nr;
-            console.log(nr);
 
             const filter = { active: true };
             const activeEvent = await event.findOne(filter);
@@ -84,7 +82,9 @@ const eventModel = {
 
             let updateQuery = {};
             updateQuery[`seats.${row}.${nr}`] = "booked";
-
+            if (activeEvent.seats[row][nr] === "booked") {
+                return res.status(400).json({ error: 'Seat already booked' });
+            }
             const result = await event.updateOne(filter, { $set: updateQuery });
 
             console.log(result);
@@ -95,6 +95,33 @@ const eventModel = {
             return res.status(500).json({ error: 'Internal Server Error' });
         }
     },
+    unbookSeat: async function unbookSeat(req, res) {
+        try {
+            let row = req.body.seat.row;
+            let nr = req.body.seat.nr;
+
+            const filter = { active: true };
+            const activeEvent = await event.findOne(filter);
+
+            if (!activeEvent) {
+                return res.status(400).json({ error: 'No active event' });
+            }
+
+            let updateQuery = {};
+            updateQuery[`seats.${row}.${nr}`] = "free";
+            if (activeEvent.seats[row][nr] === "free") {
+                return res.status(400).json({ error: 'Seat already free' });
+            }
+            const result = await event.updateOne(filter, { $set: updateQuery });
+
+            console.log(result);
+
+            return res.status(200).json({ message: 'Seat unbooked successfully' });
+        } catch (error) {
+            console.error('Error unbooking seat:', error);
+            return res.status(500).json({ error: 'Internal Server Error' });
+        }
+    }
 };
 
 module.exports = eventModel;

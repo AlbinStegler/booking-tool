@@ -10,9 +10,6 @@
     background-color: rgba(75, 75, 75, 0.411);
     overflow: scroll;
     margin: 1em;
-
-
-
 }
 
 .event::-webkit-scrollbar {

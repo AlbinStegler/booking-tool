@@ -11,14 +11,6 @@ const Events = () => {
         setEvents(res);
     }
 
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         let res = await eventModel.getEvents();
-    //         setEvents(res);
-    //     }
-    //     fetchData();
-    // }, []);
-
     useEffect(() => {
         updateEvents();
     }, []);
@@ -41,8 +33,8 @@ const Events = () => {
                 <button onClick={e => deleteEvent(e, event._id)}>Ta bort event</button>
             </div>
             <div className='two-col'>
-                {event.active === true ? <p>AKTIVT</p> : <p>EJ AKTIVT</p>}
-                <button onClick={e => activateEvent(e, event.eventName)}>Aktivera</button>
+                {event.active === true ? <p className='green'>AKTIVT</p> : <p className='red'>EJ AKTIVT</p>}
+                {event.active !== true ? <button onClick={e => activateEvent(e, event.eventName)}>Aktivera</button> : null}
             </div>
         </div>
     ));

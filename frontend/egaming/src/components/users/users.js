@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
 import userModel from '../../models/userModel';
+import eventModel from '../../models/eventModel';
+
 
 const Users = () => {
     const [users, setUsers] = useState([]);
 
+    async function fetchUsers() {
+        let activeEvent = await eventModel.getActiveEvent();
+        let res = await userModel.getUsersByEvent(activeEvent.eventName);
+        setUsers(res);
+    }
+
+
     useEffect(() => {
-        async function fetchData() {
-            let res = await userModel.getUsers();
-            setUsers(res);
-        }
-        fetchData();
+        fetchUsers();
     }, []);
 
     async function handleInOut(user) {
@@ -20,13 +25,19 @@ const Users = () => {
         else {
             user.checked_in = true;
         }
-        // await userModel.updateUser(user);
+        await userModel.updateUser(user);
         // finns ingen updateUser i userModel
         setUsers([...users]);
     }
 
+    async function removeUser(user) {
+        console.log('Removing user:', user._id);
+        await userModel.deleteUser(user._id);
+        fetchUsers();
+    };
+
     let Registered = users.map((user, index) => (
-        <div key={index} className="user" onDoubleClick={handleInOut} >
+        <div key={index} className="user" >
             <div className='two-col'>
                 <h1>{user.member.member_nick}</h1>
                 {user.checked_in ? <p className='green'>Checked in</p> : <p className='red'>Not checked in</p>}
@@ -39,6 +50,10 @@ const Users = () => {
                 <p>Plats</p>
                 <p>{user.seat.row} {user.seat.seat}</p>
             </div>
+            <div className='two-col'>
+                <button onClick={() => removeUser(user)}>Ta bort</button>
+                {user.checked_in ? <button onClick={() => handleInOut(user)}>Checka ut</button> : <button onClick={() => handleInOut(user)}>Checka in</button>}
+            </div>
         </div>
     ));
 
@@ -46,7 +61,10 @@ const Users = () => {
 
     return (
         <div className="users-container">
-            <h1>Registrerade användare</h1>
+            <div className='two-col'>
+                <h1>Registrerade användare</h1>
+                <button onClick={fetchUsers}>Uppdatera</button>
+            </div>
             <p>Antal användare: {users.length}</p>
             {Registered}
         </div>
