@@ -1,12 +1,10 @@
 import React from 'react';
 import './style.css';
-import Lottie from 'lottie-react';
 
 const Hero = () => {
     return (
         <div className="hero">
             <video className="background-video" autoPlay loop muted>
-
                 <source src="videos/first_export_long.mp4" type="video/mp4" alt="backgroundvideo" />
             </video>
             <div className='hero-content'>
