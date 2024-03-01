@@ -1,5 +1,5 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/80de2329-6be4-4d47-a7a3-84adffbfdb59/deploy-status)](https://app.netlify.com/sites/egamenight/deploys)
-[![Frontend](https://egamenight.netlify.app/)
+[!Frontend](https://egamenight.netlify.app/)
 
 # booking-tool
 
