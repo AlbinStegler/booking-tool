@@ -1,4 +1,8 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/80de2329-6be4-4d47-a7a3-84adffbfdb59/deploy-status)](https://app.netlify.com/sites/egamenight/deploys)
+
+Frontend is here: (backend is on its way)
+[Visit frontend](https://egamenight.netlify.app/)
+
 # booking-tool
 
 This project is created for my thesis in as my last project as a student on the Web programming course at Blekinge Tekniska Högskola.
