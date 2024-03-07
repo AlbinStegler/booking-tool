@@ -1,3 +1,5 @@
 frontend/egaming/node_modules/
 backend/node_modules/
 .netlify/
+backend/.env
+frontend/egaming/.env
