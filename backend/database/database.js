@@ -1,10 +1,15 @@
 const mongoose = require("mongoose");
+const { eventNames } = require("../app");
 
 const database = {
     getDb: async function getDb() {
-        let dsn = "mongodb://localhost:27017/lan";
-
-        await mongoose.connect(dsn, { useNewUrlParser: true, useUnifiedTopology: true })
+        let dsn;
+        if (process.env.NODE_ENV === "test") {
+            dsn = "mongodb://localhost:27017/lan";
+        } else {
+            dsn = `mongodb+srv://${process.env.ATLAS_USERNAME}:${process.env.ATLAS_PASSWORD}@egamenight.dkzmkdw.mongodb.net/?retryWrites=true&w=majority&appName=EgameNight`;
+        }
+        await mongoose.connect(dsn)
             .then(() => {
                 console.log("Connected to database");
             })

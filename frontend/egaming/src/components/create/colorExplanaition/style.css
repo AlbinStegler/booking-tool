@@ -5,12 +5,13 @@
     flex-direction: row;
     justify-content: center;
     padding-bottom: 1em;
+    gap: 50px;
 }
 
 .color {
     font: 1.2em 'anton';
     display: flex;
-    width: 33vw;
+    width: 10vw;
     flex-direction: column;
     justify-content: center;
     align-items: center;

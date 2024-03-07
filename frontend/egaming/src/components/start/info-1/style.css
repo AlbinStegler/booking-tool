@@ -52,6 +52,7 @@
 
 @media screen and (max-width: 768px) {
     .info-box {
+        font-size: 1.2em;
         flex-direction: column;
         margin: 1vh 10vw;
 
