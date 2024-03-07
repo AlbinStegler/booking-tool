@@ -5,7 +5,7 @@ const Hero = () => {
     return (
         <div className="hero">
             <video className="background-video" autoPlay loop muted>
-                <source src="images/first_export_long.webm" type="video/mp4" alt="backgroundvideo" />
+                <source src="images/first_export_long.webm" type="video/webm" alt="backgroundvideo" />
             </video>
             <div className='hero-content'>
                 <img src="images/Banner.png" alt="banner" />
